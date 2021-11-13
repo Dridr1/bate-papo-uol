@@ -89,7 +89,29 @@ main{
     padding: 26px 0 106px 0;
     gap: 4px;
     overflow: auto;
+    word-break: break-all;
+
 }
+
+.message{
+  background-color: white;
+  padding: 14px 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.message b{
+  font-weight: bold;
+}
+.message em{
+  color: #AAAAAA;
+}
+.message-status{
+  background-color: #DCDCDC;
+}
+.private-message{
+  background-color: #FFDEDE;
+}
+
 
 /* Footer */
 footer{
