@@ -13,17 +13,49 @@
 </head>
 
 <body>
-    <div class="login-screen">
+    <!-- <div class="login-screen">
         <img src="images/logo.png"/>
         <input data-identifier="enter-name" type="text" name="username-login" class="username-login" placeholder="Digite seu nome">
         <span class="hidden-element username-unavailable">Nome de usuário indisponível!</span>
         <button data-identifier="start" onclick="login()" class="enter-button">Entrar</button>
         <div class="loading hidden-element"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div> -->
+    <div class="menu hidden-element">
+        <div onclick="closeMenu()" class="close"></div>
+        <nav>
+            <span class="menu-title">Escolha um contato para enviar mensagem:</span>
+            <ul>
+                <li>
+                    <div>
+                        <ion-icon name="people"></ion-icon>
+                        <span class="contact-name">Todos</span>
+                    </div>
+                    <img class="hidden-element" src="images/checkmark.png"/>
+                </li>
+            </ul>
+            <span class="menu-title">Escolha a visibiliade:</span>
+            <ul>
+                <li class="visbility">
+                    <div class="public">
+                        <ion-icon name="lock-open"></ion-icon>
+                        <span class="contact-name">Público</span>
+                    </div>
+                    <img src="images/checkmark.png"/>
+                </li>
+                <li class="visbility">
+                    <div class="private">
+                        <ion-icon name="lock-closed"></ion-icon>
+                        <span class="contact-name">Reservadamente</span>
+                    </div>
+                    <img class="hidden-element" src="images/checkmark.png"/>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     <header class="top-bar">
         <img src="images/logo.png" class="logo">
-        <ion-icon class="people" name="people"></ion-icon>
+        <div onclick="openMenu()"><ion-icon class="people" name="people"></ion-icon></div>
     </header>
 
     <main></main>

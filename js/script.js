@@ -1,6 +1,6 @@
-//Tudo relacionado ao login do usuário e manter sua conexão com o servidor
 let username;
-
+let toWho = 'Todos';
+//Tudo relacionado ao login do usuário e manter sua conexão com o servidor
 function login(){
     username = document.querySelector('.username-login').value;
 
@@ -73,8 +73,8 @@ function displayMessages(promise){
                 text = `<span class="message"><em>(${promise.data[i].time})</em> <b>${promise.data[i].from}</b> para <b>${promise.data[i].to}</b>: ${promise.data[i].text}</span>`;
             }
         }
-        else if(promise.data[i].type === 'private_message'){
-            if(i === (promise.data.length-1)){
+        else if(promise.data[i].type === 'private_message' && promise.data[i].to === username){
+            if(i === (promise.data.length-1 )){
                 text = `<span class="message private-message last-message"><em>(${promise.data[i].time})</em> <b>${promise.data[i].from}</b> reservadamente para <b>${promise.data[i].to}</b>: ${promise.data[i].text}</span>`;
             }
             else{
@@ -86,3 +86,19 @@ function displayMessages(promise){
     let elemento = document.querySelector('.last-message');
     elemento.scrollIntoView();
 }
+//Funções relacionadas ao menu
+function openMenu(){
+    document.querySelector('.menu').style.zIndex = "3";
+    document.querySelector('.close').style.width = "31%";
+    document.querySelector('.close').style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    document.querySelector('nav').style.width = "69%";
+}
+function closeMenu(){
+    document.querySelector('.close').style.width = "100%";
+    document.querySelector('.close').style.backgroundColor = "rgba(0, 0, 0, 0)";
+    document.querySelector('nav').style.width = "0%";
+    setTimeout(() => {
+        document.querySelector('.menu').style.zIndex = "-1"
+    }, 500);
+}
+
