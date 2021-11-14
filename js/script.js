@@ -22,6 +22,7 @@ function loginSuccess(){
 
     setInterval(keepConnection, 5000);
     setInterval(getMessages, 3000);
+    setInterval(getParticipants, 3000);
 }
 
 function loginFailed(){
@@ -89,9 +90,12 @@ function displayMessages(promise){
 //Funções relacionadas ao menu
 function openMenu(){
     document.querySelector('.menu').style.zIndex = "3";
-    document.querySelector('.close').style.width = "31%";
-    document.querySelector('.close').style.backgroundColor = "rgba(0, 0, 0, 0.6)";
-    document.querySelector('nav').style.width = "69%";
+    
+    setTimeout(() => {
+        document.querySelector('.close').style.width = "31%";
+        document.querySelector('.close').style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+        document.querySelector('nav').style.width = "69%";
+    }, 70);
 }
 function closeMenu(){
     document.querySelector('.close').style.width = "100%";
@@ -102,3 +106,27 @@ function closeMenu(){
     }, 500);
 }
 
+function getParticipants(){
+    const promise = axios.get('https://mock-api.driven.com.br/api/v4/uol/participants');
+    promise.then(printParticipants);
+    promise.catch(() => {console.log("Erro ao carregar lista de participantes")});
+}
+function printParticipants(promise){
+    let participantsList = document.querySelector('.participants-list');
+    participantsList.innerHTML = `<li>
+                                      <div>
+                                          <ion-icon name="people"></ion-icon>
+                                          <span class="contact-name">Todos</span>
+                                      </div>
+                                      <img class="hidden-element" src="images/checkmark.png"/>
+                                  </li>`;
+    for(let i = 0; i < promise.data.length; i++){
+        participantsList.innerHTML +=  `<li>
+                                            <div>
+                                                <ion-icon name="person-circle"></ion-icon>
+                                                <span class="contact-name">${promise.data[i].name}</span>
+                                            </div>
+                                            <img class="hidden-element" src="images/checkmark.png"/>
+                                        </li>` 
+    }
+}
