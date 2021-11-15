@@ -34,18 +34,18 @@
                 </li>
             </ul>
             <span class="menu-title">Escolha a visibiliade:</span>
-            <ul>
-                <li class="visbility">
-                    <div class="public">
+            <ul class="visibility-options">
+                <li onclick="selectVisibility(this)" class="visibility-option public selected">
+                    <div>
                         <ion-icon name="lock-open"></ion-icon>
-                        <span class="contact-name">Público</span>
+                        <span class="visibility-name">Público</span>
                     </div>
-                    <img src="images/checkmark.png"/>
+                    <img class="hidden-element" src="images/checkmark.png"/>
                 </li>
-                <li class="visbility">
-                    <div class="private">
+                <li onclick="selectVisibility(this)" class="visibility-option private">
+                    <div>
                         <ion-icon name="lock-closed"></ion-icon>
-                        <span class="contact-name">Reservadamente</span>
+                        <span class="visibility-name">Reservadamente</span>
                     </div>
                     <img class="hidden-element" src="images/checkmark.png"/>
                 </li>

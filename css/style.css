@@ -183,6 +183,10 @@ nav{
   width: 12px;
   height: 11px;
 }
+
+.selected img{
+  display: flex;
+}
 /* Footer */
 footer{
     width: 100%;
