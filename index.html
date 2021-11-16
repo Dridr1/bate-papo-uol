@@ -25,7 +25,7 @@
         <nav>
             <span class="menu-title">Escolha um contato para enviar mensagem:</span>
             <ul class="participants-list">
-                <li>
+                <li data-identifier="participant">
                     <div>
                         <ion-icon name="people"></ion-icon>
                         <span class="contact-name">Todos</span>
@@ -35,14 +35,14 @@
             </ul>
             <span class="menu-title">Escolha a visibiliade:</span>
             <ul class="visibility-options">
-                <li onclick="selectVisibility(this)" class="visibility-option public selected">
+                <li data-identifier="visibility" onclick="selectVisibility(this)" class="visibility-option public selected">
                     <div>
                         <ion-icon name="lock-open"></ion-icon>
                         <span class="visibility-name">Público</span>
                     </div>
                     <img class="hidden-element" src="images/checkmark.png"/>
                 </li>
-                <li onclick="selectVisibility(this)" class="visibility-option private">
+                <li data-identifier="visibility" onclick="selectVisibility(this)" class="visibility-option private">
                     <div>
                         <ion-icon name="lock-closed"></ion-icon>
                         <span class="visibility-name">Reservadamente</span>
@@ -63,6 +63,7 @@
     <footer>
         <input placeholder="Escreva aqui..." type="text" name="input-message" class="input-message">
         <button onclick="sendMessage()"><ion-icon name="paper-plane-outline"></ion-icon></button>
+        <span class="message-detail"></span>
     </footer>
 
     <!-- external modules and scripts-->
