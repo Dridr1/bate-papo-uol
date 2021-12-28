@@ -12,6 +12,9 @@ The goal of this project is to study basic functions of the Axios library to int
 * Send public messages to someone
 * Send private messages to someone
 
+### How to use this app:
+Write the name you want to display when sending a message, if the name is not in use you will see the chat room, where you can send public and private messages.
+
 ### Languages and tools I used
 ![Visual Studio Code](https://img.shields.io/static/v1?style=for-the-badge&message=Visual+Studio+Code&color=007ACC&logo=Visual+Studio+Code&logoColor=FFFFFF&label=)
 ![JavaScript](https://img.shields.io/static/v1?style=for-the-badge&message=JavaScript&color=222222&logo=JavaScript&logoColor=F7DF1E&label=)
@@ -20,3 +23,5 @@ The goal of this project is to study basic functions of the Axios library to int
 <img src="https://axios-http.com/assets/logo.svg" style="height:27.5px;"/>
 ![Git](https://img.shields.io/static/v1?style=for-the-badge&message=Git&color=F05032&logo=Git&logoColor=FFFFFF&label=)
 ![Fedora](https://img.shields.io/static/v1?style=for-the-badge&message=Fedora&color=294172&logo=Fedora&logoColor=FFFFFF&label=)
+
+>Obs.: this app is not desktop friendly, if you want to use it in a desktop web browser you have to open the developer tools and display it with a cellphone screen (ctrl + shift + M on google chrome)
